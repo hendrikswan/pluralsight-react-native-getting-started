@@ -6,7 +6,10 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { formatDate } from './api';
+import {
+  formatDate,
+  getCountdownParts,
+} from './api';
 
 
 
@@ -64,6 +67,13 @@ const styles = StyleSheet.create({
 
 
 export default function EventCard({ event }) {
+  const {
+    days,
+    hours,
+    minutes,
+    seconds,
+  } =  getCountdownParts(event.date);
+
   return (
     <TouchableHighlight>
       <View style={styles.card}>
@@ -78,25 +88,25 @@ export default function EventCard({ event }) {
           <View
             style={styles.counter}
           >
-            <Text style={styles.counterText}>20</Text>
+            <Text style={styles.counterText}>{days}</Text>
             <Text style={styles.counterLabel}>DAYS</Text>
           </View>
           <View
             style={styles.counter}
           >
-            <Text style={styles.counterText}>35</Text>
+            <Text style={styles.counterText}>{hours}</Text>
             <Text style={styles.counterLabel}>HOURS</Text>
           </View>
           <View
             style={styles.counter}
           >
-            <Text style={styles.counterText}>15</Text>
+            <Text style={styles.counterText}>{minutes}</Text>
             <Text style={styles.counterLabel}>MINUTES</Text>
           </View>
           <View
             style={styles.counter}
           >
-            <Text style={styles.counterText}>41</Text>
+            <Text style={styles.counterText}>{seconds}</Text>
             <Text style={styles.counterLabel}>SECONDS</Text>
           </View>
         </View>

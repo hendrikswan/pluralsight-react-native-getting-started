@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 import moment from 'moment';
 
-const url = 'http://969f43b1.ngrok.io/events';
+const url = 'http://e85eac8d.ngrok.io/events';
 
 export function getEvents() {
   return fetch(url)
@@ -38,6 +38,7 @@ export function formatDate(dateString) {
 
 
 export function formatDateTime(dateString) {
+  console.log(dateString);
   const parsed = moment(new Date(dateString));
 
   if (!parsed.isValid()) {
@@ -45,4 +46,14 @@ export function formatDateTime(dateString) {
   }
 
   return parsed.format('H A on D MMM YYYY');
+}
+
+export function getCountdownParts(eventDate) {
+  const duration = moment.duration(moment(new Date(eventDate)).diff(new Date()));
+  return {
+    days: parseInt(duration.as('days')),
+    hours: duration.get('hours'),
+    minutes: duration.get('minutes'),
+    seconds: duration.get('seconds'),
+  };
 }

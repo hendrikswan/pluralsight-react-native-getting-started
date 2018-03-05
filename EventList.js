@@ -21,6 +21,15 @@ class EventList extends Component {
     super(props, state);
 
     getEvents().then(events => this.setState({ events }));
+
+    setInterval(() => {
+      this.setState({
+        events: this.state.events.map(evt => ({
+          ...evt,
+          timer: Date.now(),
+        })),
+      });
+    }, 1000);
   }
 
   static navigationOptions = {
