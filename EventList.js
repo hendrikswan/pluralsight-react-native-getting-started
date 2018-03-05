@@ -17,21 +17,6 @@ const styles = StyleSheet.create({
 });
 
 class EventList extends Component {
-  constructor(props, state) {
-    super(props, state);
-
-    getEvents().then(events => this.setState({ events }));
-
-    setInterval(() => {
-      this.setState({
-        events: this.state.events.map(evt => ({
-          ...evt,
-          timer: Date.now(),
-        })),
-      });
-    }, 1000);
-  }
-
   static navigationOptions = {
     title: 'Your Events',
     // headerRight: (
@@ -48,11 +33,32 @@ class EventList extends Component {
     events: [],
   }
 
+  componentDidMount() {
+    // getEvents().then(events => this.setState({ events }));
+
+    setInterval(() => {
+      this.setState({
+        events: this.state.events.map(evt => ({
+          ...evt,
+          timer: Date.now(),
+        })),
+      });
+    }, 1000);
+
+    this.props.navigation.addListener(
+      'didFocus',
+      () => {
+        getEvents().then(events => this.setState({ events }));
+      }
+    );
+  }
+
   handleAddEvent = () => {
     this.props.navigation.navigate('form')
   }
 
   render() {
+    // console.log('isfocused', this.props.navigation.isFocused);
     return [
       <FlatList
         key="flatlist"
@@ -69,7 +75,7 @@ class EventList extends Component {
         key="fab"
         buttonColor="rgba(231,76,60,1)"
         onPress={this.handleAddEvent}
-      />
+      />,
     ];
   }
 }
