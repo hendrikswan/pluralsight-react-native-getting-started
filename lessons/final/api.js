@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 import moment from 'moment';
 
-const url = 'http://e85eac8d.ngrok.io/events';
+const url = 'http://localhost:3000/events';
 
 export function getEvents() {
   return fetch(url)
