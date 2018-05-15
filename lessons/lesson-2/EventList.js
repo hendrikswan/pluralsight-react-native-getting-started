@@ -10,7 +10,8 @@ import EventCard from './EventCard';
 const styles = StyleSheet.create({
   list: {
     flex: 1,
-    paddingTop: 5,
+    paddingTop: 20,
+    backgroundColor: '#F3F3F3'
   },
 });
 
@@ -38,7 +39,6 @@ class EventList extends Component {
 
 
   render() {
-    // console.log('isfocused', this.props.navigation.isFocused);
     return (
       <FlatList
         key="flatlist"
