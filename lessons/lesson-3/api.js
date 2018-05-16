@@ -1,6 +1,4 @@
-import uuid from 'uuid';
 import moment from 'moment';
-
 
 export function formatDate(dateString) {
   const parsed = moment(new Date(dateString));

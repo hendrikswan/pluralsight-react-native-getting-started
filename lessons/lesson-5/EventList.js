@@ -22,7 +22,6 @@ class EventList extends Component {
     title: 'Your Events',
   };
 
-
   state = {
     events: [],
   }

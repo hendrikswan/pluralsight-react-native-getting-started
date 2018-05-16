@@ -3,7 +3,6 @@ import {
   Text,
   View,
   StyleSheet,
-  TouchableHighlight,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {
@@ -75,43 +74,41 @@ export default function EventCard({ event }) {
   } = getCountdownParts(event.date);
 
   return (
-    <TouchableHighlight>
-      <View style={styles.card}>
-        <View style={styles.cardHeader}>
-          <Text style={styles.date}>{formatDate(event.date)}</Text>
-          <Text style={styles.title}>{event.title}</Text>
-        </View>
+    <View style={styles.card}>
+      <View style={styles.cardHeader}>
+        <Text style={styles.date}>{formatDate(event.date)}</Text>
+        <Text style={styles.title}>{event.title}</Text>
+      </View>
 
+      <View
+        style={styles.counterContainer}
+      >
         <View
-          style={styles.counterContainer}
+          style={styles.counter}
         >
-          <View
-            style={styles.counter}
-          >
-            <Text style={styles.counterText}>{days}</Text>
-            <Text style={styles.counterLabel}>DAYS</Text>
-          </View>
-          <View
-            style={styles.counter}
-          >
-            <Text style={styles.counterText}>{hours}</Text>
-            <Text style={styles.counterLabel}>HOURS</Text>
-          </View>
-          <View
-            style={styles.counter}
-          >
-            <Text style={styles.counterText}>{minutes}</Text>
-            <Text style={styles.counterLabel}>MINUTES</Text>
-          </View>
-          <View
-            style={styles.counter}
-          >
-            <Text style={styles.counterText}>{seconds}</Text>
-            <Text style={styles.counterLabel}>SECONDS</Text>
-          </View>
+          <Text style={styles.counterText}>{days}</Text>
+          <Text style={styles.counterLabel}>DAYS</Text>
+        </View>
+        <View
+          style={styles.counter}
+        >
+          <Text style={styles.counterText}>{hours}</Text>
+          <Text style={styles.counterLabel}>HOURS</Text>
+        </View>
+        <View
+          style={styles.counter}
+        >
+          <Text style={styles.counterText}>{minutes}</Text>
+          <Text style={styles.counterLabel}>MINUTES</Text>
+        </View>
+        <View
+          style={styles.counter}
+        >
+          <Text style={styles.counterText}>{seconds}</Text>
+          <Text style={styles.counterLabel}>SECONDS</Text>
         </View>
       </View>
-    </TouchableHighlight>
+    </View>
   );
 }
 
