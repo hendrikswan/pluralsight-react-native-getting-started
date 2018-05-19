@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "expo": "^26.0.0",
+    "moment": "^2.22.1",
     "react": "16.3.0-alpha.1",
     "react-native": "0.54.0",
     "react-native-action-button": "2.8.4",

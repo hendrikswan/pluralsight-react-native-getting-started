@@ -3,7 +3,6 @@ import {
   Text,
   View,
   StyleSheet,
-  TouchableHighlight,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {
