@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "1.13.1",
+    "eslint-config-react-native": "^2.0.0",
     "jest-expo": "26.0.0",
-    "react-test-renderer": "16.3.0-alpha.1",
-    "eslint-config-react-native": "^2.0.0"
+    "react-native-scripts": "1.13.1",
+    "react-test-renderer": "16.3.0-alpha.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -25,7 +25,8 @@
     "react": "16.3.0-alpha.1",
     "react-native": "0.54.0",
     "react-native-action-button": "2.8.4",
+    "react-native-modal-datetime-picker": "^4.13.0",
     "react-navigation": "1.4.0",
-    "react-native-modal-datetime-picker": "^4.13.0"
+    "uuid": "^3.2.1"
   }
 }
