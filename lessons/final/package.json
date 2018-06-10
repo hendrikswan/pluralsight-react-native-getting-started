@@ -23,8 +23,9 @@
     "expo": "^25.0.0",
     "react": "16.2.0",
     "react-native": "0.52.0",
-    "react-native-action-button": "^2.8.4",
-    "react-native-modal-datetime-picker": "^4.13.0",
-    "react-navigation": "^1.4.0"
+    "react-native-action-button": "2.8.4",
+    "react-navigation": "1.4.0",
+    "react-native-modal-datetime-picker": "4.13.0",
+    "uuid": "3.2.1"
   }
 }

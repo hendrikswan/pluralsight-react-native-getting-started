@@ -25,8 +25,8 @@
     "react": "16.3.0-alpha.1",
     "react-native": "0.54.0",
     "react-native-action-button": "2.8.4",
-    "react-native-modal-datetime-picker": "^4.13.0",
     "react-navigation": "1.4.0",
-    "uuid": "^3.2.1"
+    "react-native-modal-datetime-picker": "4.13.0",
+    "uuid": "3.2.1"
   }
 }
