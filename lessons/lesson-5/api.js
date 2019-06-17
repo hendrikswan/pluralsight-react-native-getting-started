@@ -1,8 +1,8 @@
 import uuid from 'uuid';
 import moment from 'moment';
-import Expo from "expo";
+import Constants from 'expo-constants';
 
-const { manifest } = Expo.Constants;
+const { manifest } = Constants;
 const api = manifest.packagerOpts.dev
   ? manifest.debuggerHost.split(`:`).shift().concat(`:3000`)
   : `api.example.com`;
