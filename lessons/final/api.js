@@ -1,7 +1,13 @@
 import uuid from 'uuid';
 import moment from 'moment';
+import Constants from 'expo-constants';
 
-const url = 'http://localhost:3000/events';
+const { manifest } = Constants;
+const api = manifest.packagerOpts.dev
+  ? manifest.debuggerHost.split(`:`).shift().concat(`:3000`)
+  : `api.example.com`;
+
+const url = `http://${api}/events`;
 
 export function getEvents() {
   return fetch(url)
@@ -36,9 +42,7 @@ export function formatDate(dateString) {
   return parsed.format('D MMM YYYY');
 }
 
-
 export function formatDateTime(dateString) {
-  console.log(dateString);
   const parsed = moment(new Date(dateString));
 
   if (!parsed.isValid()) {
